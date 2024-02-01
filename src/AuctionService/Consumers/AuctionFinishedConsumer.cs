@@ -17,7 +17,9 @@ public class AuctionFinishedConsumer : IConsumer<AuctionFinished>
     {
         Console.WriteLine("--> Consuming auction finished");
 
-        var auction = await _dbContext.Auctions.FindAsync(context.Message.AuctionId);
+        Guid auctionId = Guid.Parse(context.Message.AuctionId);
+
+        var auction = await _dbContext.Auctions.FindAsync(auctionId);
 
         if (context.Message.ItemSold)
         {
