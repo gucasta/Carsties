@@ -20,9 +20,14 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: webapp-secret
-                key: authSecret 
+                key: authSecret
+          - name: CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: webapp-secret
+                key: clientSecret 
           - name: NEXTAUTH_URL
-            value: https://app.carsties.com
+            value: https://app.martelldevel.online
           - name: API_URL
             value: http://gateway-clusterip/
           - name: ID_URL
