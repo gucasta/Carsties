@@ -479,3 +479,4 @@ $RECYCLE.BIN/
 # Certs
 *.crt
 *.key
+infra/prod-k8s/prod-secrets.yml
